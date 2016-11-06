@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9E787971DC95186002A696E /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E787961DC95186002A696E /* MapAnnotation.swift */; };
+		B9E787991DCAB2CC002A696E /* POITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E787981DCAB2CC002A696E /* POITableViewCell.swift */; };
+		B9E7879D1DCE5E7B002A696E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E7879C1DCE5E7B002A696E /* SearchTableViewController.swift */; };
 		B9ED93B61DC2C6D800F5CAFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93B51DC2C6D800F5CAFE /* AppDelegate.swift */; };
-		B9ED93B81DC2C6D800F5CAFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93B71DC2C6D800F5CAFE /* ViewController.swift */; };
+		B9ED93B81DC2C6D800F5CAFE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93B71DC2C6D800F5CAFE /* MapViewController.swift */; };
 		B9ED93BB1DC2C6D800F5CAFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9ED93B91DC2C6D800F5CAFE /* Main.storyboard */; };
 		B9ED93BE1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93BC1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpot.xcdatamodeld */; };
 		B9ED93C01DC2C6D800F5CAFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9ED93BF1DC2C6D800F5CAFE /* Assets.xcassets */; };
 		B9ED93C31DC2C6D800F5CAFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9ED93C11DC2C6D800F5CAFE /* LaunchScreen.storyboard */; };
 		B9ED93CE1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93CD1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotTests.swift */; };
 		B9ED93D91DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93D81DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotUITests.swift */; };
+		B9ED93E81DC3F6E600F5CAFE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ED93E71DC3F6E600F5CAFE /* MapKit.framework */; };
+		B9ED93EC1DC93F1100F5CAFE /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9E787961DC95186002A696E /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		B9E787981DCAB2CC002A696E /* POITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POITableViewCell.swift; sourceTree = "<group>"; };
+		B9E7879C1DCE5E7B002A696E /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = ../SearchTableViewController.swift; sourceTree = "<group>"; };
 		B9ED93B21DC2C6D800F5CAFE /* com.NikkoSanchez.BlocSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.NikkoSanchez.BlocSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ED93B51DC2C6D800F5CAFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B9ED93B71DC2C6D800F5CAFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9ED93B71DC2C6D800F5CAFE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9ED93BA1DC2C6D800F5CAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9ED93BD1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = com_NikkoSanchez_BlocSpot.xcdatamodel; sourceTree = "<group>"; };
 		B9ED93BF1DC2C6D800F5CAFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 		B9ED93D41DC2C6D800F5CAFE /* com.NikkoSanchez.BlocSpotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.NikkoSanchez.BlocSpotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ED93D81DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = com_NikkoSanchez_BlocSpotUITests.swift; sourceTree = "<group>"; };
 		B9ED93DA1DC2C6D800F5CAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9ED93E71DC3F6E600F5CAFE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewController.swift; path = ../ListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9ED93E81DC3F6E600F5CAFE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,7 @@
 				B9ED93CC1DC2C6D800F5CAFE /* com.NikkoSanchez.BlocSpotTests */,
 				B9ED93D71DC2C6D800F5CAFE /* com.NikkoSanchez.BlocSpotUITests */,
 				B9ED93B31DC2C6D800F5CAFE /* Products */,
+				B9ED93E61DC3F6E600F5CAFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,7 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				B9ED93B51DC2C6D800F5CAFE /* AppDelegate.swift */,
-				B9ED93B71DC2C6D800F5CAFE /* ViewController.swift */,
+				B9E7879C1DCE5E7B002A696E /* SearchTableViewController.swift */,
+				B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */,
+				B9ED93B71DC2C6D800F5CAFE /* MapViewController.swift */,
+				B9E787961DC95186002A696E /* MapAnnotation.swift */,
+				B9E787981DCAB2CC002A696E /* POITableViewCell.swift */,
 				B9ED93B91DC2C6D800F5CAFE /* Main.storyboard */,
 				B9ED93BF1DC2C6D800F5CAFE /* Assets.xcassets */,
 				B9ED93C11DC2C6D800F5CAFE /* LaunchScreen.storyboard */,
@@ -126,6 +142,14 @@
 				B9ED93DA1DC2C6D800F5CAFE /* Info.plist */,
 			);
 			path = com.NikkoSanchez.BlocSpotUITests;
+			sourceTree = "<group>";
+		};
+		B9ED93E61DC3F6E600F5CAFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9ED93E71DC3F6E600F5CAFE /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +222,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = S855R3TGB6;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B9ED93C81DC2C6D800F5CAFE = {
 						CreatedOnToolsVersion = 8.0;
@@ -265,9 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9ED93B81DC2C6D800F5CAFE /* ViewController.swift in Sources */,
+				B9ED93B81DC2C6D800F5CAFE /* MapViewController.swift in Sources */,
+				B9E787971DC95186002A696E /* MapAnnotation.swift in Sources */,
 				B9ED93B61DC2C6D800F5CAFE /* AppDelegate.swift in Sources */,
 				B9ED93BE1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpot.xcdatamodeld in Sources */,
+				B9E787991DCAB2CC002A696E /* POITableViewCell.swift in Sources */,
+				B9ED93EC1DC93F1100F5CAFE /* ListTableViewController.swift in Sources */,
+				B9E7879D1DCE5E7B002A696E /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +551,7 @@
 				B9ED93DF1DC2C6D800F5CAFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9ED93E01DC2C6D800F5CAFE /* Build configuration list for PBXNativeTarget "com.NikkoSanchez.BlocSpotTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +560,7 @@
 				B9ED93E21DC2C6D800F5CAFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9ED93E31DC2C6D800F5CAFE /* Build configuration list for PBXNativeTarget "com.NikkoSanchez.BlocSpotUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +569,7 @@
 				B9ED93E51DC2C6D800F5CAFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
