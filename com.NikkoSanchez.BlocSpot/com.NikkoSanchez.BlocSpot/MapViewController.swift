@@ -8,12 +8,24 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var savePinOutlet: UIButton!
     @IBOutlet weak var mapView: MKMapView!
-    
+    @IBAction func savePin(_ sender: UIButton) {
+        guard let selectedAnnotation = selectedAnnotation else { return }
+        savePin(title: selectedAnnotation.title, latitude: selectedAnnotation.coordinate.latitude, longitude: selectedAnnotation.coordinate.longitude)
+        fetchPin()
+        displaySavedPins()
+        
+    }
+
+    var selectedAnnotation: MKAnnotation?
     var resultSearchController : UISearchController?
+    
+    var savedPins = [Pin]()
     
     var locationManager = CLLocationManager()
     var latitudeLoc : Double = 0
@@ -48,7 +60,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        
+        fetchPin()
+        displaySavedPins()
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +107,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         
         let search = MKLocalSearch(request: request)
-        search.start { (response, error) in
+        search.start { [weak self] (response, error) in
             
             guard let response = response else {
                 print("search error: error")
@@ -103,10 +116,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             
             for item in response.mapItems {
                 //print("Item name = \(item.name)")
-                self.addPinToMapView(title: item.name!, latitude: (item.placemark.location?.coordinate.latitude)!, longitude: (item.placemark.location?.coordinate.longitude)!)
+                self?.addPinToMapView(title: item.name!, latitude: (item.placemark.location?.coordinate.latitude)!, longitude: (item.placemark.location?.coordinate.longitude)!)
             }
+            
         }
         
+    }
+    
+    func displaySavedPins() {
+        
+        for pin in savedPins {
+            //print("Item name = \(item.name)")
+            self.addPinToMapView(title: pin.title!, latitude: pin.latitude, longitude: pin.longitude)
+        }
+        
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+        mapView.addAnnotations(annotations)
     }
     
     // Add annotation to map view
@@ -114,6 +140,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     func addPinToMapView(title: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let annotation = MapAnnotation(coordinate: location, title: title)
+        
         
         mapView.addAnnotation(annotation)
         annotationArray.append(annotation)
@@ -129,6 +156,37 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // MARK: Core Data
+    
+    func savePin(title: String??, latitude: Double, longitude: Double){
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "Pin", in: context) else { return }
+        
+        let pin = Pin(entity: entity, insertInto: context)
+        
+        pin.title = title!
+        pin.latitude = latitude
+        pin.longitude = longitude
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func fetchPin() {
+        let fetchRequest: NSFetchRequest<Pin> = Pin.fetchRequest()
+        let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
+        
+        
+        let fetchData = try! context.fetch(fetchRequest)
+        
+        savedPins = fetchData
+        
+    }
+    
 }
 
 
@@ -139,9 +197,11 @@ extension MapViewController: MKMapViewDelegate {
         if annotation.isKind(of: MKUserLocation.self) {
             return nil
         }
-    
+        
+        let saved = savedPins.filter { $0.longitude == annotation.coordinate.longitude && $0.latitude == annotation.coordinate.latitude }
+        
         let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "CustomPinAnnotationView")
-        pinView.pinTintColor = UIColor.red
+        pinView.pinTintColor = saved.count > 0 ? UIColor.blue : UIColor.red
         pinView.canShowCallout = true
     
         return pinView
@@ -155,7 +215,7 @@ extension MapViewController: MKMapViewDelegate {
         //let filteredAnnotations = annotationArray // do some filtering here
         
         mapView.removeAnnotations(annotations)
-        
+        displaySavedPins()
       //  mapView.addAnnotations(filteredAnnotations)
         
     }
@@ -164,6 +224,23 @@ extension MapViewController: MKMapViewDelegate {
         
         searchMap()
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        // get annotation from MKAnnotationView
+        
+        selectedAnnotation = view.annotation as? MapAnnotation
+        
+        /*if let annotation = view.annotation as? MapAnnotation {
+            print("Your Annotation Title: \(annotation.title)")
+        }*/
+        
+        savePinOutlet.isEnabled = true
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        savePinOutlet.isEnabled = false
+    }
+    
 }
 
 extension MapViewController: ListTableViewControllerDelegate {
@@ -180,7 +257,8 @@ extension MapViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.dismiss(animated: true, completion: nil)
-        //print("YOOOOOO")
+        
+        searchMap()
     }
 
 }
