@@ -20,6 +20,9 @@
 		B9ED93D91DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93D81DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpotUITests.swift */; };
 		B9ED93E81DC3F6E600F5CAFE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ED93E71DC3F6E600F5CAFE /* MapKit.framework */; };
 		B9ED93EC1DC93F1100F5CAFE /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */; };
+		B9F625301DD2CC5D0089E274 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6252F1DD2CC5D0089E274 /* CoreDataManager.swift */; };
+		B9F625331DD2D0C00089E274 /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625311DD2D0C00089E274 /* Pin+CoreDataClass.swift */; };
+		B9F625341DD2D0C00089E274 /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625321DD2D0C00089E274 /* Pin+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		B9ED93DA1DC2C6D800F5CAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9ED93E71DC3F6E600F5CAFE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewController.swift; path = ../ListTableViewController.swift; sourceTree = "<group>"; };
+		B9F6252F1DD2CC5D0089E274 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B9F625311DD2D0C00089E274 /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataClass.swift"; path = "../Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B9F625321DD2D0C00089E274 /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataProperties.swift"; path = "../Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 				B9E7879C1DCE5E7B002A696E /* SearchTableViewController.swift */,
 				B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */,
 				B9ED93B71DC2C6D800F5CAFE /* MapViewController.swift */,
+				B9F625311DD2D0C00089E274 /* Pin+CoreDataClass.swift */,
+				B9F625321DD2D0C00089E274 /* Pin+CoreDataProperties.swift */,
+				B9F6252F1DD2CC5D0089E274 /* CoreDataManager.swift */,
 				B9E787961DC95186002A696E /* MapAnnotation.swift */,
 				B9E787981DCAB2CC002A696E /* POITableViewCell.swift */,
 				B9ED93B91DC2C6D800F5CAFE /* Main.storyboard */,
@@ -294,12 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F625331DD2D0C00089E274 /* Pin+CoreDataClass.swift in Sources */,
 				B9ED93B81DC2C6D800F5CAFE /* MapViewController.swift in Sources */,
 				B9E787971DC95186002A696E /* MapAnnotation.swift in Sources */,
+				B9F625341DD2D0C00089E274 /* Pin+CoreDataProperties.swift in Sources */,
 				B9ED93B61DC2C6D800F5CAFE /* AppDelegate.swift in Sources */,
 				B9ED93BE1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpot.xcdatamodeld in Sources */,
 				B9E787991DCAB2CC002A696E /* POITableViewCell.swift in Sources */,
 				B9ED93EC1DC93F1100F5CAFE /* ListTableViewController.swift in Sources */,
+				B9F625301DD2CC5D0089E274 /* CoreDataManager.swift in Sources */,
 				B9E7879D1DCE5E7B002A696E /* SearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
