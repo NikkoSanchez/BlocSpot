@@ -11,9 +11,10 @@ import MapKit
 import CoreData
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var savePinOutlet: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    
     @IBAction func savePin(_ sender: UIButton) {
         guard let selectedAnnotation = selectedAnnotation else { return }
         savePin(title: selectedAnnotation.title, latitude: selectedAnnotation.coordinate.latitude, longitude: selectedAnnotation.coordinate.longitude)
@@ -21,6 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         displaySavedPins()
         
     }
+    
 
     var selectedAnnotation: MKAnnotation?
     var resultSearchController : UISearchController?

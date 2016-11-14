@@ -23,6 +23,11 @@
 		B9F625301DD2CC5D0089E274 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6252F1DD2CC5D0089E274 /* CoreDataManager.swift */; };
 		B9F625331DD2D0C00089E274 /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625311DD2D0C00089E274 /* Pin+CoreDataClass.swift */; };
 		B9F625341DD2D0C00089E274 /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625321DD2D0C00089E274 /* Pin+CoreDataProperties.swift */; };
+		B9F625371DD6AFAB0089E274 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625351DD6AFAB0089E274 /* Category+CoreDataClass.swift */; };
+		B9F625381DD6AFAB0089E274 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625361DD6AFAB0089E274 /* Category+CoreDataProperties.swift */; };
+		B9F6253A1DD6D9A30089E274 /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F625391DD6D9A30089E274 /* PopoverTableViewController.swift */; };
+		B9F6253C1DD94D0C0089E274 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6253B1DD94D0C0089E274 /* CategoryTableViewCell.swift */; };
+		B9F6253E1DD956140089E274 /* CategoryColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6253D1DD956140089E274 /* CategoryColorEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		B9F6252F1DD2CC5D0089E274 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B9F625311DD2D0C00089E274 /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataClass.swift"; path = "../Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B9F625321DD2D0C00089E274 /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataProperties.swift"; path = "../Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B9F625351DD6AFAB0089E274 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "../Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B9F625361DD6AFAB0089E274 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B9F625391DD6D9A30089E274 /* PopoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTableViewController.swift; sourceTree = "<group>"; };
+		B9F6253B1DD94D0C0089E274 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		B9F6253D1DD956140089E274 /* CategoryColorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryColorEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +130,17 @@
 				B9ED93B51DC2C6D800F5CAFE /* AppDelegate.swift */,
 				B9E7879C1DCE5E7B002A696E /* SearchTableViewController.swift */,
 				B9ED93EB1DC93F1100F5CAFE /* ListTableViewController.swift */,
+				B9F625391DD6D9A30089E274 /* PopoverTableViewController.swift */,
+				B9F6253D1DD956140089E274 /* CategoryColorEnum.swift */,
+				B9F6253B1DD94D0C0089E274 /* CategoryTableViewCell.swift */,
+				B9E787981DCAB2CC002A696E /* POITableViewCell.swift */,
 				B9ED93B71DC2C6D800F5CAFE /* MapViewController.swift */,
 				B9F625311DD2D0C00089E274 /* Pin+CoreDataClass.swift */,
 				B9F625321DD2D0C00089E274 /* Pin+CoreDataProperties.swift */,
+				B9F625351DD6AFAB0089E274 /* Category+CoreDataClass.swift */,
+				B9F625361DD6AFAB0089E274 /* Category+CoreDataProperties.swift */,
 				B9F6252F1DD2CC5D0089E274 /* CoreDataManager.swift */,
 				B9E787961DC95186002A696E /* MapAnnotation.swift */,
-				B9E787981DCAB2CC002A696E /* POITableViewCell.swift */,
 				B9ED93B91DC2C6D800F5CAFE /* Main.storyboard */,
 				B9ED93BF1DC2C6D800F5CAFE /* Assets.xcassets */,
 				B9ED93C11DC2C6D800F5CAFE /* LaunchScreen.storyboard */,
@@ -305,14 +320,19 @@
 			files = (
 				B9F625331DD2D0C00089E274 /* Pin+CoreDataClass.swift in Sources */,
 				B9ED93B81DC2C6D800F5CAFE /* MapViewController.swift in Sources */,
+				B9F625371DD6AFAB0089E274 /* Category+CoreDataClass.swift in Sources */,
 				B9E787971DC95186002A696E /* MapAnnotation.swift in Sources */,
 				B9F625341DD2D0C00089E274 /* Pin+CoreDataProperties.swift in Sources */,
 				B9ED93B61DC2C6D800F5CAFE /* AppDelegate.swift in Sources */,
 				B9ED93BE1DC2C6D800F5CAFE /* com_NikkoSanchez_BlocSpot.xcdatamodeld in Sources */,
+				B9F625381DD6AFAB0089E274 /* Category+CoreDataProperties.swift in Sources */,
 				B9E787991DCAB2CC002A696E /* POITableViewCell.swift in Sources */,
+				B9F6253E1DD956140089E274 /* CategoryColorEnum.swift in Sources */,
 				B9ED93EC1DC93F1100F5CAFE /* ListTableViewController.swift in Sources */,
 				B9F625301DD2CC5D0089E274 /* CoreDataManager.swift in Sources */,
+				B9F6253C1DD94D0C0089E274 /* CategoryTableViewCell.swift in Sources */,
 				B9E7879D1DCE5E7B002A696E /* SearchTableViewController.swift in Sources */,
+				B9F6253A1DD6D9A30089E274 /* PopoverTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
