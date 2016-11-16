@@ -34,15 +34,15 @@ enum CategoryColorEnum: Int {
     func colorFor(lastColor: CategoryColorEnum) -> Int {
         switch lastColor {
         case .red:
-            return CategoryColorEnum.red.rawValue
-        case .blue:
             return CategoryColorEnum.blue.rawValue
-        case .cyan:
+        case .blue:
             return CategoryColorEnum.cyan.rawValue
-        case .green:
+        case .cyan:
             return CategoryColorEnum.green.rawValue
-        case .yellow:
+        case .green:
             return CategoryColorEnum.yellow.rawValue
+        case .yellow:
+            return CategoryColorEnum.red.rawValue
         }
     }
 }

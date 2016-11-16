@@ -195,12 +195,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Choose A Category" id="nGq-Mz-7wg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="O3S-6U-kS7">
+                            <connections>
+                                <action selector="doneButton:" destination="dB5-4h-PtL" id="Yhy-Jh-LeD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dRh-EH-uIo">
                             <connections>
                                 <action selector="addColorBarButton:" destination="dB5-4h-PtL" id="IGW-hC-JYt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="dRh-EH-uIo" id="uGM-oN-dU8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suM-j5-p0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

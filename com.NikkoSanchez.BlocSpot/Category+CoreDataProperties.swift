@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  com.NikkoSanchez.BlocSpot
 //
-//  Created by Nikko on 11/11/16.
+//  Created by Nikko on 11/15/16.
 //  Copyright © 2016 Nikko. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ extension Category {
     }
 
     @NSManaged public var title: String?
-    @NSManaged public var color: NSObject?
+    @NSManaged public var color: Int16
+    @NSManaged public var timeStamp: NSDate?
 
 }

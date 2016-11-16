@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol CategoryTableViewCellDelegate: class {
+    func pass(indexPath: IndexPath, text: String)
+}
+
 class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var categoryText: UITextField!
+    var indexPath: IndexPath?
+    weak var categoryTVCDelegate : CategoryTableViewCellDelegate? //PopoverTableViewController
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        categoryText.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,4 +30,12 @@ class CategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension CategoryTableViewCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let indexPath = indexPath, let textFieldText = textField.text else { return true }
+        categoryTVCDelegate?.pass(indexPath: indexPath, text: textFieldText)
+        return true
+    }
 }
