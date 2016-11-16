@@ -107,16 +107,16 @@ extension SearchTableViewController: UISearchControllerDelegate {
     }
 }
 
-extension SearchTableViewController: UISearchBarDelegate {
+/*extension SearchTableViewController: UISearchBarDelegate {
    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-         _ = navigationController?.popViewController(animated: true)
-        print("YOOOOOO")
+        self.dismiss(animated: true, completion: nil)
+        //print("YOOOOOO")
     }
    // func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
    // }
-}
+}*/
 
 extension SearchTableViewController: UISearchResultsUpdating {
     
