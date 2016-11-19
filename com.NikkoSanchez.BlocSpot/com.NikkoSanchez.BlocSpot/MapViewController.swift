@@ -203,7 +203,7 @@ extension MapViewController: MKMapViewDelegate {
         let saved = savedPins.filter { $0.longitude == annotation.coordinate.longitude && $0.latitude == annotation.coordinate.latitude }
         
         let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "CustomPinAnnotationView")
-        pinView.pinTintColor = saved.count > 0 ? UIColor.blue : UIColor.red
+        pinView.pinTintColor = saved.count > 0 ? UIColor.magenta : UIColor.purple
         pinView.canShowCallout = true
     
         return pinView

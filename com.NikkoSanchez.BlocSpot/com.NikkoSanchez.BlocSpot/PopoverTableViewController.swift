@@ -13,6 +13,7 @@ class PopoverTableViewController: UITableViewController, NSFetchedResultsControl
 
     
     var managedObjectContext : NSManagedObjectContext?
+    var pin: Pin?
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBAction func addColorBarButton(_ sender: UIBarButtonItem) {
@@ -30,7 +31,7 @@ class PopoverTableViewController: UITableViewController, NSFetchedResultsControl
         //newManagedObject.setValue("New Note", forKey: "body")
         
         //make a new blank object for title
-        newManagedObject.setValue("Click to rename category", forKey: "title")
+        newManagedObject.setValue(NSString(), forKey: "title")
         let colorInt = firstCategory?.color ?? 0
         let firstCategoryColorEnum = CategoryColorEnum(rawValue: Int(colorInt))
         
@@ -95,11 +96,10 @@ class PopoverTableViewController: UITableViewController, NSFetchedResultsControl
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CategoryTableViewCell
         
         cell.categoryTVCDelegate = self
-        //cell.categoryText.text = "YOOOO TESTING"
         cell.indexPath = indexPath
         let object = self.fetchedResultsController.object(at: indexPath)
-        if let categoryColorEnum = CategoryColorEnum(rawValue: indexPath.row) {
-                cell.backgroundColor = categoryColorEnum.colorFor(category: categoryColorEnum)
+        if let categoryColorEnum = CategoryColorEnum(rawValue: Int(object.color)) {
+            cell.backgroundColor = categoryColorEnum.colorFor(category: categoryColorEnum)
         }
         
         self.configureCell(cell, withObject: object)
@@ -113,13 +113,23 @@ class PopoverTableViewController: UITableViewController, NSFetchedResultsControl
         //cell.backgroundColor
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //performSegue(withIdentifier: "blah", sender: indexPath)
+        guard let selectedCategory = self.fetchedResultsController.fetchedObjects?[indexPath.row] else { return }
+        pin?.category = selectedCategory
+        CoreDataManager.sharedInstance.saveContext()
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // Override to support conditional editing of the table view.
    /* override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }*/
     
-    
+
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -154,7 +164,7 @@ class PopoverTableViewController: UITableViewController, NSFetchedResultsControl
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: true)//false)
+        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)//false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -229,15 +239,25 @@ class PopoverTableViewController: UITableViewController, NSFetchedResultsControl
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+      //  if segue.identifier == "blah" {
+            let controller = segue.destination as! SavedPOITableViewController
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }//sender as! IndexPath
+            let index = selectedIndexPath
+            
+       // }
+        
+        //controller.color = self.tableView
+        
     }
-    */
+    
 
 }
 
