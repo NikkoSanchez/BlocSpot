@@ -19,6 +19,7 @@ class ListTableViewController: UITableViewController {
     var listArray : [MapAnnotation]?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
